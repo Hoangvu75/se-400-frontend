@@ -1,15 +1,20 @@
 import './style.scss';
 import JobBackground from '../../../../libs/asset-lib/src/assets/job-background.jpg';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <div className="login-form">
-          <h2>Chào mừng bạn đã quay trở lại</h2>
+    <div className="register-page">
+      <div className="register-container">
+        <div className="register-form">
+          <h2>Tạo tài khoản mới</h2>
           <p className="sub-text">Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý tưởng</p>
 
           <form>
+            <div className="input-container">
+              <label>Tên</label>
+              <input type="text" placeholder="Tên của bạn" />
+            </div>
+
             <div className="input-container">
               <label>Email</label>
               <input type="email" placeholder="Email" />
@@ -18,25 +23,29 @@ const LoginPage = () => {
             <div className="input-container">
               <label>Password</label>
               <input type="password" placeholder="Mật khẩu" />
-              <a href="#" className="forgot-password">Quên mật khẩu</a>
             </div>
 
-            <button type="submit" className="login-button">Đăng nhập</button>
+            <div className="input-container">
+              <label>Xác nhận mật khẩu</label>
+              <input type="password" placeholder="Xác nhận mật khẩu" />
+            </div>
+
+            <button type="submit" className="register-button">Đăng ký</button>
 
             <div className="social-login">
-              <p>Hoặc đăng nhập bằng</p>
+              <p>Hoặc đăng ký bằng</p>
               <button type="button" className="google-button">Google</button>
               <button type="button" className="facebook-button">Facebook</button>
               <button type="button" className="linkedin-button">LinkedIn</button>
             </div>
 
             <p className="terms-text">
-              Bằng việc đăng nhập bằng tài khoản mạng xã hội, tôi đã đọc và đồng ý với
+              Bằng việc đăng ký, tôi đã đọc và đồng ý với
               <a href="#"> Điều khoản</a> dịch vụ và <a href="#">Chính sách bảo mật</a> của chúng tôi.
             </p>
 
             <p className="sign-up">
-              Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a>
+              Đã có tài khoản? <a href="#">Đăng nhập</a>
             </p>
           </form>
         </div>
@@ -46,4 +55,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
