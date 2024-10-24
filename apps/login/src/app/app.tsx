@@ -1,5 +1,5 @@
 import './style.scss';
-import JobBackground from '../../../../libs/asset-lib/src/assets/job-background.jpg';
+import { LoginBg } from '@react-monorepo/asset-lib';
 
 const LoginPage = () => {
   return (
@@ -36,12 +36,12 @@ const LoginPage = () => {
             </p>
 
             <p className="sign-up">
-              Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a>
+              Bạn chưa có tài khoản? <a href="/register">Đăng ký ngay</a>
             </p>
           </form>
         </div>
       </div>
-      <img src={JobBackground} className="background-image" />
+      <img src={LoginBg} className="background-image" />
     </div>
   );
 };
