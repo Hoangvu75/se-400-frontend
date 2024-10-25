@@ -30,8 +30,8 @@ const LandingPage: React.FC = () => {
           </ul>
         </nav>
         <div>
-          <button className="sign-up-btn">Đăng ký</button>
-          <button className="sign-in-btn">Đăng nhập</button>
+          <a href="/register"><button className="sign-up-btn">Đăng ký</button></a>
+          <a href="/login"><button className="sign-in-btn">Đăng nhập</button></a>
         </div>
       </header>
 
