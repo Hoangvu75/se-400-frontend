@@ -6,6 +6,7 @@ import FindJob from './assets/find-job.png';
 import Company from './assets/company.png';
 import Recruitment from './assets/recruitment.png';
 import ContactUs from './assets/contact-us.png';
+import AppLogo from './assets/app-logo.png';
 
 export {
   JobBackground,
@@ -15,5 +16,6 @@ export {
   FindJob,
   Company,
   Recruitment,
-  ContactUs
+  ContactUs,
+  AppLogo
 };
