@@ -1,8 +1,13 @@
 import './style.scss';
 import React from 'react';
-import { LandingBg, FindJob, Company, Recruitment, ContactUs } from '@react-monorepo/asset-lib';
+import { LandingBg, FindJob, Company, Recruitment } from '@react-monorepo/asset-lib';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@react-monorepo/store';
 
 const LandingPage: React.FC = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user);
+
   return (
     <div className="landing-page">
       <header className="header">
