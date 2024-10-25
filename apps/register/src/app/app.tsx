@@ -1,47 +1,54 @@
-import './style.scss';
-import { RegisterBg } from '../../../../libs/asset-lib/src/index';
+import { AppLogo } from '@react-monorepo/asset-lib';
+import * as Styles from './styles';
+import { CommonButton, InputField, LinkText } from '@react-monorepo/components';
 
 const RegisterPage = () => {
   return (
-    <div className="register-page">
-      <img src={RegisterBg} className="background-image" />
-      <div className="register-container">
-        <div className="register-form">
-          <h2>Tạo tài khoản mới</h2>
-          <p className="sub-text">Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý tưởng</p>
+    <div style={Styles.pageStyle}>
+      <div style={Styles.formContainer}>
+        <div style={Styles.loginForm}>
+          <h2 style={Styles.formTitle}>Chào mừng bạn đến với Job Seekers</h2>
+          <p style={Styles.formSubTitle}>Hãy tạo một tài khoản để bắt đầu xây dựng sự nghiệp của bạn</p>
 
           <form>
-            <div className="input-container">
-              <label>Tên</label>
-              <input type="text" placeholder="Tên của bạn" />
+            <div style={Styles.inputContainer}>
+              <label style={Styles.inputLabel}>Họ và tên</label>
+              <InputField placeholder="Họ và tên" />
             </div>
 
-            <div className="input-container">
-              <label>Email</label>
-              <input type="email" placeholder="Email" />
+            <div style={Styles.inputContainer}>
+              <label style={Styles.inputLabel}>Email</label>
+              <InputField type="email" placeholder="Email" />
             </div>
 
-            <div className="input-container">
-              <label>Password</label>
-              <input type="password" placeholder="Mật khẩu" />
+            <div style={Styles.inputContainer}>
+              <label style={Styles.inputLabel}>Mật khẩu</label>
+              <InputField type="password" placeholder="Mật khẩu" />
             </div>
 
-            <div className="input-container">
-              <label>Xác nhận mật khẩu</label>
-              <input type="password" placeholder="Xác nhận mật khẩu" />
+            <div style={Styles.inputContainer}>
+              <label style={Styles.inputLabel}>Xác nhận mật khẩu</label>
+              <InputField type="password" placeholder="Xác nhận mật khẩu" />
             </div>
 
-            <button type="submit" className="register-button">Đăng ký</button>
+            <CommonButton style={Styles.registerButton} type="submit">Đăng ký</CommonButton>
 
-            <p className="terms-text">
-              Bằng việc đăng ký, tôi đã đọc và đồng ý với
-              <a href="#"> Điều khoản</a> dịch vụ và <a href="#">Chính sách bảo mật</a> của chúng tôi.
+            <p style={Styles.termsText}>
+              Bằng việc đăng ký tài khoản, tôi đã đọc và đồng ý với
+              <LinkText href="#"> Điều khoản dịch vụ</LinkText> và <LinkText href="#">Chính sách bảo mật</LinkText> của chúng tôi.
             </p>
 
-            <p className="sign-up">
-              Đã có tài khoản? <a href="/login">Đăng nhập</a>
+            <p style={Styles.signUpText}>
+              Bạn đã có tài khoản? <LinkText href="/login">Đăng nhập</LinkText>
             </p>
           </form>
+        </div>
+      </div>
+      <div style={Styles.appSlogan}>
+        <div>
+          <img style={Styles.appLogo} src={AppLogo} alt="App Logo" />
+          <h1 style={Styles.appSloganTitle}>Ứng dụng tìm việc làm hàng đầu</h1>
+          <p style={Styles.appSloganSubtitle}>Tạo tài khoản để bắt đầu tìm kiếm công việc mơ ước của bạn</p>
         </div>
       </div>
     </div>
