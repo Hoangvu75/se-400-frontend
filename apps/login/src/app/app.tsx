@@ -1,6 +1,7 @@
 import { AppLogo } from '@react-monorepo/asset-lib';
 import * as Styles from './styles';
 import { CommonButton, InputField, LinkText } from '@react-monorepo/components';
+import { registerText } from './styles';
 
 const LoginPage = () => {
   return (
@@ -35,12 +36,12 @@ const LoginPage = () => {
 
             <p style={Styles.termsText}>
               Bằng việc đăng nhập bằng tài khoản mạng xã hội, tôi đã đọc và đồng ý với
-              <LinkText href="#"> Điều khoản</LinkText> dịch vụ và 
+              <LinkText href="#"> Điều khoản</LinkText> dịch vụ và
               <LinkText href="#"> Chính sách bảo mật</LinkText> của chúng tôi.
             </p>
 
             <p style={Styles.signUpText}>
-              Bạn chưa có tài khoản? <LinkText href="/register">Đăng ký ngay</LinkText>
+              Bạn chưa có tài khoản? <LinkText style={registerText} href="/register">Đăng ký ngay</LinkText>
             </p>
           </form>
         </div>

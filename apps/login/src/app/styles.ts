@@ -123,6 +123,10 @@ export const signUpText: CSSProperties = {
   color: Colors.grey,
 };
 
+export const registerText: CSSProperties = {
+  fontSize: '14px',
+}
+
 export const appSlogan: CSSProperties = {
   color: 'white',
   textAlign: 'center',

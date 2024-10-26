@@ -1,14 +1,14 @@
-import { useState, CSSProperties, HTMLInputTypeAttribute } from 'react';
+import { useState, CSSProperties } from 'react';
 import * as Color from '@react-monorepo/colors';
 
-interface InputFieldProps {
+interface TextAreaFieldProps {
   placeholder?: string;
-  type?: HTMLInputTypeAttribute;
   isRequired?: boolean;
+  rows?: number;
   style?: CSSProperties;
 }
 
-export const InputField = (props: InputFieldProps) => {
+export const TextAreaField = (props: TextAreaFieldProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const inputField: CSSProperties = {
@@ -19,16 +19,17 @@ export const InputField = (props: InputFieldProps) => {
     width: '100%',
     boxSizing: 'border-box',
     outline: 'none',
+    resize: 'vertical',
   };
 
   return (
-    <input
-      type={props.type}
+    <textarea
       style={{ ...inputField, ...props.style }}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       placeholder={props.placeholder}
       required={props.isRequired}
+      rows={props.rows}
     />
   );
 };
