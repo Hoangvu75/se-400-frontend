@@ -1,80 +1,101 @@
-import './style.scss';
 import React from 'react';
-import { LandingBg, FindJob, Company, Recruitment } from '@react-monorepo/asset-lib';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@react-monorepo/store';
+import { LandingBg, FindJob, Company, Recruitment, AppLogo } from '@react-monorepo/asset-lib';
+import * as Styles from './styles';
+import { CommonButton, InputField, LinkText, NavDropdownItems, NavItem } from '@react-monorepo/components';
+import SignInButton from './components/sign-in-button';
+import SignUpButton from './components/sign-up-button';
+import GetStartedButton from './components/get-started-button';
+import { heroImageImgStyle } from './styles';
+import { TextAreaField } from '../../../../libs/components/src/lib/text-area-field';
 
 const LandingPage: React.FC = () => {
-  const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.user);
-
   return (
-    <div className="landing-page">
-      <header className="header">
-        <div className="logo">JOB SEEKERS</div>
+    <div style={Styles.landingPageStyle}>
+      <header style={Styles.headerStyle}>
+        <div style={Styles.navLogoStyle}>
+          <img src={AppLogo} alt="App logo" style={Styles.imageLogoStyle} />
+          <div style={Styles.logoStyle}>JOB SEEKERS</div>
+        </div>
         <nav>
-          <ul>
-            <li>
-              <a href="#home">Tìm việc làm</a>
-              <ul className="dropdown">
-                <li><a href="#job1">Toàn thời gian</a></li>
-                <li><a href="#job2">Bán thời gian</a></li>
-                <li><a href="#job3">Việc làm từ xa</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#companies">Các công ty</a>
-              <ul className="dropdown">
-                <li><a href="#company1">Doanh nghiệp trong nước</a></li>
-                <li><a href="#company2">Doanh nghiệp nước ngoài</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#post-job">Đăng tin tuyển dụng</a>
-            </li>
+          <ul style={Styles.navUlStyle}>
+            <NavDropdownItems
+              title="Tìm việc làm"
+              items={[
+                { href: '#job1', label: 'Toàn thời gian' },
+                { href: '#job2', label: 'Bán thời gian' },
+                { href: '#job3', label: 'Việc làm từ xa' },
+              ]}
+            />
+            <NavDropdownItems
+              title="Các công ty"
+              items={[
+                { href: '#company1', label: 'Doanh nghiệp trong nước' },
+                { href: '#company2', label: 'Doanh nghiệp nước ngoài' },
+              ]}
+            />
+            <NavItem href="#recruitment">Đăng tin tuyển dụng</NavItem>
           </ul>
         </nav>
         <div>
-          <a href="/register"><button className="sign-up-btn">Đăng ký</button></a>
-          <a href="/login"><button className="sign-in-btn">Đăng nhập</button></a>
+          <a href="/register">
+            <SignUpButton />
+          </a>
+          <a href="/login">
+            <SignInButton />
+          </a>
         </div>
       </header>
 
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Tìm kiếm những công việc phù hợp xung quanh bạn</h1>
-          <p>Chúng tôi cung cấp những công việc phù hợp với nhu cầu của bạn. Hãy cùng chúng tôi tìm kiếm công việc mơ ước.</p>
-          <button className="get-started-btn">Bắt đầu ngay</button>
+      <section style={Styles.heroSectionStyle}>
+        <div style={Styles.heroContentStyle}>
+          <h1 style={Styles.heroContentH1Style}>
+            Tìm kiếm những công việc phù hợp xung quanh bạn
+          </h1>
+          <p style={Styles.heroContentPStyle}>
+            Chúng tôi cung cấp những công việc phù hợp với nhu cầu của bạn. Hãy
+            cùng chúng tôi tìm kiếm công việc mơ ước.
+          </p>
+          <GetStartedButton />
         </div>
-        <div className="hero-image">
-          <img src={LandingBg} alt="Landing page background" />
+        <div style={Styles.heroImageStyle}>
+          <img
+            src={LandingBg}
+            alt="Landing page background"
+            style={heroImageImgStyle}
+          />
         </div>
       </section>
 
-      <section className="services-section">
+      <section style={Styles.servicesSectionStyle}>
         <h2>Dịch vụ của chúng tôi</h2>
-        <div className="services">
-          <div className="service">
-            <img src={FindJob} alt="Service 1" />
+        <div style={Styles.servicesStyle}>
+          <div style={Styles.serviceStyle}>
+            <img src={FindJob} alt="Service 1" style={Styles.serviceImgStyle} />
             <h3>Tìm việc làm</h3>
-            <p>Chúng tôi cung cấp những công việc phù hợp với nhu cầu của bạn</p>
+            <p>
+              Chúng tôi cung cấp những công việc phù hợp với nhu cầu của bạn
+            </p>
           </div>
-          <div className="service">
-            <img src={Company} alt="Service 2" />
+          <div style={Styles.serviceStyle}>
+            <img src={Company} alt="Service 2" style={Styles.serviceImgStyle} />
             <h3>Các công ty</h3>
             <p>Chúng tôi cung cấp thông tin về các công ty đang tuyển dụng</p>
           </div>
-          <div className="service">
-            <img src={Recruitment} alt="Service 3" />
+          <div style={Styles.serviceStyle}>
+            <img
+              src={Recruitment}
+              alt="Service 3"
+              style={Styles.serviceImgStyle}
+            />
             <h3>Đăng tin tuyển dụng</h3>
             <p>Cung cấp dịch vụ đăng tin tuyển dụng miễn phí</p>
           </div>
         </div>
       </section>
 
-      <section className="contact-section">
-        <div className="contact-container">
-          <div className="map-container">
+      <section style={Styles.contactSectionStyle}>
+        <div style={Styles.contactContainerStyle}>
+          <div style={Styles.mapContainerStyle}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434507108!2d144.95373631531504!3d-37.81720997975186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11ea91%3A0xbcdf5d9c1bfa06bc!2sYour+Business+Location!5e0!3m2!1sen!2sus!4v1600451882030!5m2!1sen!2sus"
               width="600"
@@ -85,21 +106,45 @@ const LandingPage: React.FC = () => {
               tabIndex={0}
             ></iframe>
           </div>
-          <div className="contact-form-container">
-            <h2>Liên hệ với chúng tôi</h2>
-            <form className="contact-form">
-              <input type="text" placeholder="Họ và tên" required />
-              <input type="email" placeholder="Email" required />
-              <textarea placeholder="Tin nhắn" rows={10} required></textarea>
-              <button type="submit">Gửi</button>
+          <div style={Styles.contactFormContainerStyle}>
+            <h2 style={Styles.contactH2Style}>Liên hệ với chúng tôi</h2>
+            <form>
+              <InputField
+                style={Styles.formItemStyle}
+                type={'text'}
+                placeholder={'Họ và tên'}
+                isRequired={true}
+              />
+              <InputField
+                style={Styles.formItemStyle}
+                type={'email'}
+                placeholder={'Email'}
+                isRequired={true}
+              />
+              <TextAreaField
+                style={Styles.formItemStyle}
+                placeholder={'Tin nhắn'}
+                isRequired={true}
+                rows={10}
+              />
+              <CommonButton style={Styles.formItemStyle} type={'submit'}>
+                Gửi
+              </CommonButton>
             </form>
           </div>
         </div>
       </section>
 
-      <footer className="footer">
-        <p>© 2023 JOB SEEKERS. Tất cả quyền được bảo lưu.</p>
-        <p><a href="#privacy-policy">Chính sách bảo mật</a> | <a href="#terms-of-service">Điều khoản dịch vụ</a></p>
+      <footer style={Styles.footerStyle}>
+        <p>© 2023 JOB SEEKERS.</p>
+        <p>
+          <LinkText href="#privacy-policy" style={Styles.linkTextStyle}>
+            Chính sách bảo mật
+          </LinkText>
+          <LinkText href="#terms-of-services" style={Styles.linkTextStyle}>
+            Điều khoản dịch vụ
+          </LinkText>
+        </p>
       </footer>
     </div>
   );
