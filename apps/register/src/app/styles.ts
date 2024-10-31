@@ -2,11 +2,15 @@ import { CSSProperties } from "react";
 import * as Colors from '@react-monorepo/colors';
 
 export const pageStyle: CSSProperties = {
-  display: 'flex',
   height: '100vh',
   width: '100vw',
   background: Colors.backgroundGradient,
   fontFamily: 'Arial, Helvetica, sans-serif',
+  overflowX: 'auto',
+}
+
+export const pageBody: CSSProperties = {
+  display: 'flex',
 }
 
 export const formContainer: CSSProperties = {

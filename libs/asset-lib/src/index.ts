@@ -7,6 +7,10 @@ import Company from './assets/company.png';
 import Recruitment from './assets/recruitment.png';
 import ContactUs from './assets/contact-us.png';
 import AppLogo from './assets/app-logo.png';
+import Google from './assets/google.png';
+import Facebook from './assets/facebook.png';
+import LinkedIn from './assets/linkedin.png';
+import FindJob2 from './assets/find-job-2.png';
 
 export {
   JobBackground,
@@ -17,5 +21,9 @@ export {
   Company,
   Recruitment,
   ContactUs,
-  AppLogo
+  AppLogo,
+  Google,
+  Facebook,
+  LinkedIn,
+  FindJob2,
 };

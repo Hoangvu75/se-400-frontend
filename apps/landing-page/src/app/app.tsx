@@ -1,9 +1,7 @@
 import React from 'react';
-import { LandingBg, FindJob, Company, Recruitment, AppLogo } from '@react-monorepo/asset-lib';
+import { LandingBg, FindJob, Company, Recruitment } from '@react-monorepo/asset-lib';
 import * as Styles from './styles';
-import { CommonButton, InputField, LinkText, NavDropdownItems, NavItem } from '@react-monorepo/components';
-import SignInButton from './components/sign-in-button';
-import SignUpButton from './components/sign-up-button';
+import { CommonButton, InputField, LinkText, NavBar } from '@react-monorepo/components';
 import GetStartedButton from './components/get-started-button';
 import { heroImageImgStyle } from './styles';
 import { TextAreaField } from '../../../../libs/components/src/lib/text-area-field';
@@ -11,40 +9,7 @@ import { TextAreaField } from '../../../../libs/components/src/lib/text-area-fie
 const LandingPage: React.FC = () => {
   return (
     <div style={Styles.landingPageStyle}>
-      <header style={Styles.headerStyle}>
-        <div style={Styles.navLogoStyle}>
-          <img src={AppLogo} alt="App logo" style={Styles.imageLogoStyle} />
-          <div style={Styles.logoStyle}>JOB SEEKERS</div>
-        </div>
-        <nav>
-          <ul style={Styles.navUlStyle}>
-            <NavDropdownItems
-              title="Tìm việc làm"
-              items={[
-                { href: '#job1', label: 'Toàn thời gian' },
-                { href: '#job2', label: 'Bán thời gian' },
-                { href: '#job3', label: 'Việc làm từ xa' },
-              ]}
-            />
-            <NavDropdownItems
-              title="Các công ty"
-              items={[
-                { href: '#company1', label: 'Doanh nghiệp trong nước' },
-                { href: '#company2', label: 'Doanh nghiệp nước ngoài' },
-              ]}
-            />
-            <NavItem href="#recruitment">Đăng tin tuyển dụng</NavItem>
-          </ul>
-        </nav>
-        <div>
-          <a href="/register">
-            <SignUpButton />
-          </a>
-          <a href="/login">
-            <SignInButton />
-          </a>
-        </div>
-      </header>
+      <NavBar />
 
       <section style={Styles.heroSectionStyle}>
         <div style={Styles.heroContentStyle}>
