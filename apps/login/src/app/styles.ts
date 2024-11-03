@@ -2,12 +2,16 @@ import { CSSProperties } from 'react';
 import * as Colors from '@react-monorepo/colors';
 
 export const pageStyle: CSSProperties = {
-  display: 'flex',
   height: '100vh',
   width: '100vw',
   background: 'linear-gradient(135deg, #4a1d68, #262d75)',
   fontFamily: 'Arial, Helvetica, sans-serif',
+  overflowX: 'auto',
 };
+
+export const pageBody: CSSProperties = {
+  display: 'flex',
+}
 
 export const formContainer: CSSProperties = {
   display: 'flex',
@@ -73,43 +77,6 @@ export const loginTitle: CSSProperties = {
   fontSize: '14px',
   color: Colors.grey,
 }
-
-export const googleButton: CSSProperties = {
-  backgroundColor: '#db4437',
-  color: '#fff',
-  width: '100%',
-  padding: '0.75rem',
-  fontSize: '14px',
-  marginBottom: '0.5rem',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-  marginTop: '0.5rem',
-};
-
-export const facebookButton: CSSProperties = {
-  backgroundColor: '#4267b2',
-  color: '#fff',
-  width: '100%',
-  padding: '0.75rem',
-  fontSize: '14px',
-  marginBottom: '0.5rem',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-};
-
-export const linkedinButton: CSSProperties = {
-  backgroundColor: '#0077b5',
-  color: '#fff',
-  width: '100%',
-  padding: '0.75rem',
-  fontSize: '14px',
-  marginBottom: '0.5rem',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-};
 
 export const termsText: CSSProperties = {
   fontSize: '12px',

@@ -6,35 +6,6 @@ export const landingPageStyle: CSSProperties = {
   color: 'white',
 };
 
-export const headerStyle: CSSProperties = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '10px 50px',
-  backgroundColor: '#0b0f22',
-};
-
-export const navLogoStyle: CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-}
-
-export const logoStyle: CSSProperties = {
-  fontSize: '1.5rem',
-  fontWeight: 'bold',
-};
-
-export const imageLogoStyle: CSSProperties = {
-  width: '100px',
-}
-
-export const navUlStyle: CSSProperties = {
-  listStyleType: 'none',
-  display: 'flex',
-  gap: '100px',
-  position: 'relative',
-};
-
 export const heroSectionStyle: CSSProperties = {
   display: 'flex',
   justifyContent: 'space-between',
