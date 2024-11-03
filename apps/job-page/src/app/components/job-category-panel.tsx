@@ -1,132 +1,14 @@
 import React, { useState } from 'react';
-import { grey, lightGrey, primary } from '@react-monorepo/colors';
+import { black, grey, lightGrey, primary } from '@react-monorepo/colors';
 import { FindJob2 } from '@react-monorepo/asset-lib';
+import { jobCategory_1 } from '../data/job-category';
 
-const categories_1 = [
-  {
-    name: 'Kinh doanh/Bán hàng',
-    options: ['Nhân viên kinh doanh', 'Nhân viên bán hàng', 'Nhân viên tư vấn'],
-  },
-  {
-    name: 'Marketing/PR/Quảng cáo',
-    options: ['Telesales', 'Sales Admin', 'Tư vấn tuyển sinh'],
-  },
-  {
-    name: 'Dịch vụ khách hàng/Vận hành',
-    options: ['Sales Online', 'Sales Bán lẻ', 'Kinh doanh thực phẩm'],
-  },
-  {
-    name: 'Nhân sự/Hành chính/Pháp chế',
-    options: [
-      'Nhân viên hành chính',
-      'Nhân viên nhân sự',
-      'Nhân viên tuyển dụng',
-    ],
-  },
-  {
-    name: 'Tài chính/Ngân hàng/Bảo hiểm',
-    options: ['Nhân viên kế toán', 'Nhân viên tín dụng', 'Nhân viên thu ngân'],
-  },
-  {
-    name: 'Công nghệ Thông tin',
-    options: ['Lập trình viên', 'Kỹ sư phần mềm', 'Kỹ sư mạng'],
-  },
-];
-
-const categories_2 = [
-  {
-    name: 'Bất động sản',
-    options: [
-      'Nhân viên kinh doanh BDS',
-      'Nhân viên tư vấn BDS',
-      'Chuyên viên BDS',
-    ],
-  },
-  {
-    name: 'Xây dựng',
-    options: ['Kỹ sư xây dựng', 'Kỹ sư cầu đường', 'Kỹ sư cơ khí'],
-  },
-  {
-    name: 'Kiến trúc/Nội thất',
-    options: ['Kiến trúc sư', 'Thiết kế nội thất', 'Kiến trúc sư nội thất'],
-  },
-  {
-    name: 'Vận tải/Logistics',
-    options: [
-      'Nhân viên vận tải',
-      'Nhân viên logistics',
-      'Nhân viên giao nhận',
-    ],
-  },
-  {
-    name: 'Hóa học/Sinh học',
-    options: ['Kỹ sư hóa', 'Kỹ sư môi trường', 'Kỹ sư thực phẩm'],
-  },
-  {
-    name: 'Môi trường/Xử lý chất thải',
-    options: ['Kỹ sư môi trường', 'Kỹ sư xử lý chất thải', 'Kỹ sư nước'],
-  },
-];
-
-const categories_3 = [
-  {
-    name: 'Nghệ thuật/Điện ảnh',
-    options: ['Diễn viên', 'Biên kịch', 'Quay phim'],
-  },
-  {
-    name: 'Thể thao/Yoga',
-    options: [
-      'Huấn luyện viên thể hình',
-      'Giáo viên yoga',
-      'Huấn luyện viên bóng đá',
-    ],
-  },
-  {
-    name: 'Giáo dục/Đào tạo',
-    options: ['Giáo viên', 'Trợ giảng', 'Giáo viên mầm non'],
-  },
-  { name: 'Y tế/Chăm sóc sức khỏe', options: ['Bác sĩ', 'Y tá', 'Dược sĩ'] },
-  { name: 'Thực phẩm/DV ăn uống', options: ['Đầu bếp', 'Phục vụ', 'Thu ngân'] },
-  {
-    name: 'Du lịch/Nhà hàng/Khách sạn',
-    options: ['Lễ tân', 'Phục vụ', 'Bảo vệ'],
-  },
-];
-
-const categories_4 = [
-  {
-    name: 'Thời trang/Trang sức',
-    options: ['Nhân viên bán hàng', 'Nhân viên thu ngân', 'Nhân viên kho'],
-  },
-  {
-    name: 'Mỹ phẩm/Làm đẹp',
-    options: ['Nhân viên bán hàng', 'Nhân viên thu ngân', 'Nhân viên kho'],
-  },
-  {
-    name: 'Nghệ thuật/Thiết kế',
-    options: ['Nhân viên bán hàng', 'Nhân viên thu ngân', 'Nhân viên kho'],
-  },
-  {
-    name: 'Tư vấn/Đào tạo',
-    options: ['Nhân viên bán hàng', 'Nhân viên thu ngân', 'Nhân viên kho'],
-  },
-  {
-    name: 'Sản xuất/Vận hành',
-    options: ['Nhân viên bán hàng', 'Nhân viên thu ngân', 'Nhân viên kho'],
-  },
-  {
-    name: 'Lao động phổ thông',
-    options: ['Nhân viên bán hàng', 'Nhân viên thu ngân', 'Nhân viên kho'],
-  },
-];
-
-const allCategories = [categories_1, categories_2, categories_3, categories_4];
+const allCategories = [jobCategory_1, jobCategory_1, jobCategory_1, jobCategory_1];
 
 const containerStyle = {
   display: 'flex',
   borderRadius: '8px',
-  padding: '0 400px',
-  marginTop: '10px',
+  margin: '10px 400px',
   fontSize: '10px',
   fontWeight: 'bold',
   gap: '10px',
@@ -146,10 +28,11 @@ const leftPanelStyle = {
 
 const rightPanelStyle = {
   backgroundColor: '#fff',
-  color: '#666',
+  color: black,
   borderRadius: '8px',
   padding: '12px',
-  height: '206px'
+  height: '206px',
+  overflowY: 'scroll' as const,
 };
 
 const menuItemStyle = {
@@ -159,9 +42,19 @@ const menuItemStyle = {
 
 const tagStyle = {
   display: 'inline-block',
-  backgroundColor: '#ddd',
-  color: '#666',
+  backgroundColor: '#ff8181',
+  color: '#ffffff',
   borderRadius: '12px',
+  padding: '6px 10px',
+  border: '1.5px solid #FF0000FF',
+};
+
+const tagStyle2 = {
+  display: 'inline-block',
+  backgroundColor: '#ddd',
+  color: grey,
+  borderRadius: '12px',
+  padding: '6px 10px',
 };
 
 const optionItemStyle = {
@@ -182,7 +75,7 @@ const JobCategoryPanel: React.FC = () => {
   const [currentCategory, setCurrentCategory] = useState<number>(1);
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} onMouseLeave={() => setActiveCategory(null)}>
       <div style={leftPanelStyle}>
         {allCategories[currentCategory - 1].map((category) => (
           <div
@@ -193,7 +86,6 @@ const JobCategoryPanel: React.FC = () => {
                 activeCategory === category.name ? 'underline' : 'none',
             }}
             onMouseEnter={() => setActiveCategory(category.name)}
-            onMouseLeave={() => setActiveCategory(null)}
           >
             {category.name}
           </div>
@@ -231,11 +123,36 @@ const JobCategoryPanel: React.FC = () => {
         {activeCategory ? (
           <div style={rightPanelStyle}>
             <a>Được tìm kiếm nhiều</a>
-            <div>
+            <div
+              style={{
+                gap: '10px',
+                display: 'flex',
+                flexWrap: 'wrap',
+                marginTop: '10px',
+              }}
+            >
               {allCategories[currentCategory - 1]
-                .find((cat) => cat.name === activeCategory)
-                ?.options.map((option, index) => (
+                .find((jobCategory) => jobCategory.name === activeCategory)
+                ?.mostFindOptions.map((option, index) => (
                   <span key={index} style={tagStyle}>
+                    {option}
+                  </span>
+                ))}
+            </div>
+            <div style={{height: '20px'}}/>
+            <a>Nhu cầu tuyển dụng cao</a>
+            <div
+              style={{
+                gap: '10px',
+                display: 'flex',
+                flexWrap: 'wrap',
+                marginTop: '10px',
+              }}
+            >
+              {allCategories[currentCategory - 1]
+                .find((jobCategory) => jobCategory.name === activeCategory)
+                ?.mostRecruitOptions.map((option, index) => (
+                  <span key={index} style={tagStyle2}>
                     {option}
                   </span>
                 ))}
@@ -257,7 +174,6 @@ const JobCategoryPanel: React.FC = () => {
               style={{
                 width: '100%',
                 height: '100%',
-
                 borderRadius: '8px',
               }}
               alt="Find Job"

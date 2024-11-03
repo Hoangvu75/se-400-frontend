@@ -2,6 +2,7 @@
 import { CommonButton, InputField, NavBar } from '@react-monorepo/components';
 import * as Styles from './styles';
 import JobCategoryPanel from './components/job-category-panel';
+import { RecommendJob } from './components/recommend-job';
 
 export function JobPage() {
   return (
@@ -25,6 +26,7 @@ export function JobPage() {
         >Tìm kiếm</CommonButton>
       </div>
       <JobCategoryPanel />
+      <RecommendJob />
       <div style={{height: '1000px'}}/>
     </div>
   );
