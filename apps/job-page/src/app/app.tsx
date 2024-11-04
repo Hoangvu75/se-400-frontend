@@ -11,17 +11,19 @@ export function JobPage() {
       <div style={{
         display: 'flex',
         flexDirection: 'row',
-        padding: '0 400px',
+        margin: '50px 300px 0 300px',
         marginTop: '50px',
       }}>
         <InputField style={{
-          borderRadius: '20px',
+          borderRadius: '50px',
+          height: '50px',
         }}
         placeholder={'Tìm kiếm công việc mong muốn'}/>
         <CommonButton
           style={{
             width: '200px',
             marginLeft: '10px',
+            borderRadius: '50px',
           }}
         >Tìm kiếm</CommonButton>
       </div>
