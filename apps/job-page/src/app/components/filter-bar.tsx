@@ -2,14 +2,39 @@ import React, { useState } from 'react';
 import { primary } from '@react-monorepo/colors';
 
 export const FilterBar = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Địa điểm");
-  const [selectedOption, setSelectedOption] = useState("Ngẫu nhiên");
+  const [selectedCategory, setSelectedCategory] = useState('Địa điểm');
+  const [selectedOption, setSelectedOption] = useState('Ngẫu nhiên');
 
   const options = {
-    "Địa điểm": ["Ngẫu nhiên", "Hà Nội", "Thành phố Hồ Chí Minh", "Miền Bắc", "Miền Nam"],
-    "Mức lương": ["Tất cả", "dưới 10 triệu", "từ 10 - 25 triệu", "từ 25 - 40 triệu"],
-    "Kinh nghiệm": ["Tất cả", "chưa có kinh nghiệm", "1 năm trở xuống", "2 năm", "3 năm", "trên 5 năm"],
-    "Ngành nghề": ["Kinh doanh/Bán hàng", "Biên/Phiên dịch", "Báo chí/truyền thông", "Bưu chính/viễn thông", "Công nghệ thông tin"]
+    'Địa điểm': [
+      'Ngẫu nhiên',
+      'Hà Nội',
+      'Thành phố Hồ Chí Minh',
+      'Miền Bắc',
+      'Miền Nam',
+    ],
+    'Mức lương': [
+      'Tất cả',
+      'dưới 10 triệu',
+      'từ 10 - 25 triệu',
+      'từ 25 - 40 triệu',
+      'trên 40 triệu',
+    ],
+    'Kinh nghiệm': [
+      'Tất cả',
+      'chưa có kinh nghiệm',
+      '1 năm trở xuống',
+      '2 năm',
+      '3 năm',
+      'trên 5 năm',
+    ],
+    'Ngành nghề': [
+      'Việc làm part-time',
+      'Kinh doanh/Bán hàng',
+      'Biên/Phiên dịch',
+      'Giảng viên/gia sư',
+      'Công nghệ thông tin',
+    ],
   };
 
   return (
@@ -21,6 +46,7 @@ export const FilterBar = () => {
           value={selectedCategory}
           onChange={(e) => {
             setSelectedCategory(e.target.value);
+            // @ts-ignore
             setSelectedOption(options[e.target.value][0]);
           }}
         >
@@ -32,19 +58,23 @@ export const FilterBar = () => {
         </select>
       </div>
       <div style={styles.navigation}>
-        {options[selectedCategory].map((option: string, index: number) => (
-          <span
-            key={index}
-            style={{
-              ...styles.option,
-              backgroundColor: option === selectedOption ? primary : '#f3f4f6',
-              color: option === selectedOption ? '#fff' : '#333'
-            }}
-            onClick={() => setSelectedOption(option)}
-          >
-            {option}
-          </span>
-        ))}
+        {
+          // @ts-ignore
+          options[selectedCategory].map((option: string, index: number) => (
+            <span
+              key={index}
+              style={{
+                ...styles.option,
+                backgroundColor:
+                  option === selectedOption ? primary : '#f3f4f6',
+                color: option === selectedOption ? '#fff' : '#333',
+              }}
+              onClick={() => setSelectedOption(option)}
+            >
+              {option}
+            </span>
+          ))
+        }
       </div>
     </div>
   );
@@ -59,6 +89,7 @@ const styles = {
   dropdownContainer: {
     display: 'flex',
     alignItems: 'center',
+    flex: 1,
   },
   label: {
     color: '#ffffff',

@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import { black, grey, lightGrey, primary } from '@react-monorepo/colors';
 import { FindJob2 } from '@react-monorepo/asset-lib';
 import { jobCategory_1 } from '../data/job-category';
+import { FaArrowRight } from 'react-icons/fa6';
 
-const allCategories = [jobCategory_1, jobCategory_1, jobCategory_1, jobCategory_1];
+const allCategories = [
+  jobCategory_1,
+  jobCategory_1,
+  jobCategory_1,
+  jobCategory_1,
+];
 
 const containerStyle = {
   display: 'flex',
   borderRadius: '8px',
-  margin: '10px 400px',
-  fontSize: '10px',
+  margin: '16px 300px 0px 300px',
+  fontSize: '12px',
   fontWeight: 'bold',
   gap: '10px',
-  height: '230px',
+  height: '250px',
 };
 
 const leftPanelStyle = {
@@ -23,7 +29,7 @@ const leftPanelStyle = {
   display: 'flex',
   flexDirection: 'column' as const,
   gap: '16px',
-  padding: '12px',
+  padding: '16px',
 };
 
 const rightPanelStyle = {
@@ -31,13 +37,14 @@ const rightPanelStyle = {
   color: black,
   borderRadius: '8px',
   padding: '12px',
-  height: '206px',
+  height: `${250 - 12 * 2}px`,
   overflowY: 'scroll' as const,
 };
 
 const menuItemStyle = {
   cursor: 'pointer',
   transition: 'color 0.3s',
+  display: 'flex',
 };
 
 const tagStyle = {
@@ -87,7 +94,8 @@ const JobCategoryPanel: React.FC = () => {
             }}
             onMouseEnter={() => setActiveCategory(category.name)}
           >
-            {category.name}
+            <a style={{flex: 1}}>{category.name}</a>
+            <FaArrowRight />
           </div>
         ))}
         <div style={{ borderTop: `1px solid ${lightGrey}`, margin: '0 0' }} />
@@ -139,7 +147,7 @@ const JobCategoryPanel: React.FC = () => {
                   </span>
                 ))}
             </div>
-            <div style={{height: '20px'}}/>
+            <div style={{ height: '20px' }} />
             <a>Nhu cầu tuyển dụng cao</a>
             <div
               style={{
