@@ -17,8 +17,27 @@ const JobCard: React.FC<JobCardProps> = ({
   salary,
   location,
 }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  const jobCardStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    padding: '16px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    cursor: 'pointer',
+    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+    transition: 'transform 0.2s',
+  };
+
   return (
-    <div style={jobCardStyle}>
+    <div
+      style={jobCardStyle}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div style={{ display: 'flex' }}>
         <img src={logo} alt="Company Logo" style={logoStyle} />
         <div style={{ marginLeft: '12px', flex: 6 }}>
@@ -36,16 +55,6 @@ const JobCard: React.FC<JobCardProps> = ({
 };
 
 // Styles for JobCard component
-const jobCardStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  backgroundColor: '#fff',
-  borderRadius: '8px',
-  padding: '16px',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-};
-
 const logoStyle: React.CSSProperties = {
   flex: 4,
   marginBottom: '8px',

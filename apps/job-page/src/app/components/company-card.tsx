@@ -8,7 +8,13 @@ export class CompanyData {
   employeeNumber: EmployeeNumber;
   jobNumber: number;
 
-  constructor(logo: string, name: string, location: string, employeeNumber: EmployeeNumber, jobNumber: number) {
+  constructor(
+    logo: string,
+    name: string,
+    location: string,
+    employeeNumber: EmployeeNumber,
+    jobNumber: number
+  ) {
     this.logo = logo;
     this.name = name;
     this.location = location;
@@ -28,8 +34,28 @@ export enum EmployeeNumber {
 }
 
 export const CompanyCard: React.FC<CompanyData> = (props) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  const companyCardStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    padding: '16px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    color: '#333',
+    cursor: 'pointer',
+    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+    transition: 'transform 0.2s',
+  };
+
   return (
-    <div style={companyCardStyle}>
+    <div
+      style={companyCardStyle}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div style={{ display: 'flex' }}>
         <img src={props.logo} alt="Company Logo" style={logoStyle} />
         <div style={{ marginLeft: '12px', flex: 6 }}>
@@ -39,24 +65,16 @@ export const CompanyCard: React.FC<CompanyData> = (props) => {
       </div>
 
       <div style={detailsStyle}>
-        <span style={employeeNumberStyle}>Quy mô nhân viên: {props.employeeNumber}</span>
+        <span style={employeeNumberStyle}>
+          Quy mô nhân viên: {props.employeeNumber}
+        </span>
         <span style={jobNumberStyle}>{props.jobNumber} công việc</span>
       </div>
     </div>
   );
-}
+};
 
 // Styles for CompanyCard component
-const companyCardStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  backgroundColor: '#fff',
-  borderRadius: '8px',
-  padding: '16px',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  color: '#333',
-};
 
 const logoStyle: React.CSSProperties = {
   flex: 4,
@@ -91,7 +109,6 @@ const employeeNumberStyle: React.CSSProperties = {
   color: grey,
   margin: 0,
   padding: 0,
-  // italic
   fontStyle: 'italic',
 };
 
