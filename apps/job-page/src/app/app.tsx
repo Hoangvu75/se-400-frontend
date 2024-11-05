@@ -3,6 +3,7 @@ import { CommonButton, InputField, NavBar } from '@react-monorepo/components';
 import * as Styles from './styles';
 import JobCategoryPanel from './components/job-category-panel';
 import { RecommendJob } from './components/recommend-job';
+import { RecommendCompany } from './components/recommend-company';
 
 export function JobPage() {
   return (
@@ -29,6 +30,7 @@ export function JobPage() {
       </div>
       <JobCategoryPanel />
       <RecommendJob />
+      <RecommendCompany />
       <div style={{height: '1000px'}}/>
     </div>
   );

@@ -21,7 +21,7 @@ const JobCard: React.FC<JobCardProps> = ({
     <div style={jobCardStyle}>
       <div style={{ display: 'flex' }}>
         <img src={logo} alt="Company Logo" style={logoStyle} />
-        <div style={{ marginLeft: '12px' }}>
+        <div style={{ marginLeft: '12px', flex: 6 }}>
           <p style={titleStyle}>{title}</p>
           <p style={companyStyle}>{company}</p>
         </div>
@@ -47,7 +47,7 @@ const jobCardStyle: React.CSSProperties = {
 };
 
 const logoStyle: React.CSSProperties = {
-  width: '40%',
+  flex: 4,
   marginBottom: '8px',
   height: '70px',
 };
