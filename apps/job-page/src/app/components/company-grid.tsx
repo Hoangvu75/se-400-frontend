@@ -1,37 +1,40 @@
-// JobGrid.tsx
+import { CompanyCard, CompanyData, EmployeeNumber } from './company-card';
+import { FindJob } from '@react-monorepo/asset-lib';
 import React, { useState } from 'react';
-import JobCard from './job-card';
-import { FindJob, FindJob2 } from '@react-monorepo/asset-lib';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 
-let jobs = [
-  {
-    logo: FindJob2,
-    title: 'Chuyên Viên Tư Vấn Đầu Tư Hàng Hóa',
-    company: 'Công ty CP Giao Dịch Hàng Hóa',
-    salary: '20 - 40 triệu',
-    location: 'Hà Nội, Hồ Chí Minh',
-  },
-  {
-    logo: FindJob,
-    title: 'Unreal Engine Artist Tại Hồ Chí Minh',
-    company: 'Công Ty TNHH Vlast Việt Nam',
-    salary: '10 - 30 triệu',
-    location: 'Hồ Chí Minh',
-  },
+let companies = [
+  new CompanyData(
+    FindJob,
+    'Công ty CP Giao Dịch Hàng Hóa',
+    'Hà Nội',
+    EmployeeNumber.EN_1,
+    12
+  ),
+  new CompanyData(
+    FindJob,
+    'Công Ty TNHH Vlast Việt Nam',
+    'Hồ Chí Minh',
+    EmployeeNumber.EN_2,
+    5
+  ),
 ];
+
 for (let i = 0; i < 8; i++) {
-  jobs = jobs.concat(jobs);
+  companies = companies.concat(companies);
 }
 
 const itemsPerPage = 9;
 
-const JobGrid: React.FC = () => {
+const CompanyGrid: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(jobs.length / itemsPerPage);
+  const totalPages = Math.ceil(companies.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentJobs = jobs.slice(startIndex, startIndex + itemsPerPage);
+  const currentCompanies = companies.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const goToNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
@@ -44,23 +47,29 @@ const JobGrid: React.FC = () => {
   return (
     <div>
       <div style={gridStyle}>
-        {currentJobs.map((job, index) => (
-          <JobCard
+        {currentCompanies.map((company, index) => (
+          <CompanyCard
             key={index}
-            logo={job.logo}
-            title={job.title}
-            company={job.company}
-            salary={job.salary}
-            location={job.location}
+            logo={company.logo}
+            name={company.name}
+            location={company.location}
+            employeeNumber={company.employeeNumber}
+            jobNumber={company.jobNumber}
           />
         ))}
       </div>
       <div style={paginationStyle}>
-        <FaArrowCircleLeft onClick={goToPrevPage} style={paginationButtonStyle} />
+        <FaArrowCircleLeft
+          onClick={goToPrevPage}
+          style={paginationButtonStyle}
+        />
         <span style={pageInfoStyle}>
           {currentPage} / {totalPages}
         </span>
-        <FaArrowCircleRight onClick={goToNextPage} style={paginationButtonStyle} />
+        <FaArrowCircleRight
+          onClick={goToNextPage}
+          style={paginationButtonStyle}
+        />
       </div>
     </div>
   );
@@ -80,6 +89,10 @@ const paginationStyle: React.CSSProperties = {
   marginTop: '20px',
 };
 
+const pageInfoStyle: React.CSSProperties = {
+  margin: '0 20px',
+};
+
 const paginationButtonStyle: React.CSSProperties = {
   borderRadius: '50%',
   color: '#fff',
@@ -89,9 +102,4 @@ const paginationButtonStyle: React.CSSProperties = {
   height: '24px',
 };
 
-const pageInfoStyle: React.CSSProperties = {
-  fontSize: '16px',
-  color: '#fff',
-};
-
-export default JobGrid;
+export { CompanyGrid };

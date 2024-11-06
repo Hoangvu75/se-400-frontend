@@ -1,7 +1,7 @@
 import React from 'react';
 import { LandingBg, FindJob, Company, Recruitment } from '@react-monorepo/asset-lib';
 import * as Styles from './styles';
-import { CommonButton, InputField, LinkText, NavBar } from '@react-monorepo/components';
+import { CommonButton, Footer, InputField, LinkText, NavBar } from '@react-monorepo/components';
 import GetStartedButton from './components/get-started-button';
 import { heroImageImgStyle } from './styles';
 import { TextAreaField } from '../../../../libs/components/src/lib/text-area-field';
@@ -100,17 +100,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      <footer style={Styles.footerStyle}>
-        <p>© 2023 JOB SEEKERS.</p>
-        <p>
-          <LinkText href="#privacy-policy" style={Styles.linkTextStyle}>
-            Chính sách bảo mật
-          </LinkText>
-          <LinkText href="#terms-of-services" style={Styles.linkTextStyle}>
-            Điều khoản dịch vụ
-          </LinkText>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 };

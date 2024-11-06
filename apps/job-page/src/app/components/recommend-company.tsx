@@ -1,8 +1,7 @@
 import React from 'react';
-import { FilterBar } from './filter-bar';
-import JobGrid from './job-grid';
+import { CompanyGrid } from './company-grid';
 
-export const RecommendJob: React.FC = () => {
+export const RecommendCompany: React.FC = () => {
   return (
     <div style={{
       margin: '100px 250px 0px 250px',
@@ -10,9 +9,8 @@ export const RecommendJob: React.FC = () => {
       <p style={{
         fontSize: '20px',
         fontWeight: 'bold',
-      }}>Gợi ý việc làm</p>
-      <FilterBar />
-      <JobGrid />
+      }}>Gợi ý công ty</p>
+      <CompanyGrid />
     </div>
   );
 }

@@ -96,15 +96,3 @@ export const formItemStyle: CSSProperties = {
   marginTop: '10px',
 }
 
-export const footerStyle: CSSProperties = {
-  backgroundColor: '#0b0f22',
-  color: 'white',
-  textAlign: 'center',
-  padding: '20px 0',
-};
-
-export const linkTextStyle: CSSProperties = {
-  color: 'white',
-  textDecoration: 'none',
-  margin: '0 10px',
-};

@@ -1,8 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { CommonButton, InputField, NavBar } from '@react-monorepo/components';
+import { CommonButton, Footer, InputField, NavBar } from '@react-monorepo/components';
 import * as Styles from './styles';
 import JobCategoryPanel from './components/job-category-panel';
 import { RecommendJob } from './components/recommend-job';
+import { RecommendCompany } from './components/recommend-company';
+import { TopJobField } from './components/top-job-field';
+import React from 'react';
 
 export function JobPage() {
   return (
@@ -29,7 +32,9 @@ export function JobPage() {
       </div>
       <JobCategoryPanel />
       <RecommendJob />
-      <div style={{height: '1000px'}}/>
+      <RecommendCompany />
+      <TopJobField />
+      <Footer />
     </div>
   );
 }

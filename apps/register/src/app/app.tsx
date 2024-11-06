@@ -1,6 +1,6 @@
 import { AppLogo } from '@react-monorepo/asset-lib';
 import * as Styles from './styles';
-import { CommonButton, InputField, LinkText, NavBar } from '@react-monorepo/components';
+import { CommonButton, Footer, InputField, LinkText, NavBar } from '@react-monorepo/components';
 
 const RegisterPage = () => {
   return (
@@ -55,6 +55,7 @@ const RegisterPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
