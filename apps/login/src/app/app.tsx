@@ -1,7 +1,7 @@
 import { AppLogo } from '@react-monorepo/asset-lib';
 import * as Styles from './styles';
 import {
-  CommonButton,
+  CommonButton, Footer,
   InputField,
   LinkText,
   NavBar, OtherTypeLoginButtons
@@ -71,6 +71,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

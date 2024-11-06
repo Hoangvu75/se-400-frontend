@@ -58,7 +58,7 @@ const JobGrid: React.FC = () => {
       <div style={paginationStyle}>
         <FaArrowCircleLeft onClick={goToPrevPage} style={paginationButtonStyle} />
         <span style={pageInfoStyle}>
-          {currentPage} / {totalPages} trang
+          {currentPage} / {totalPages}
         </span>
         <FaArrowCircleRight onClick={goToNextPage} style={paginationButtonStyle} />
       </div>
