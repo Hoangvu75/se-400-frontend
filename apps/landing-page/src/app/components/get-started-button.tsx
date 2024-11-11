@@ -30,6 +30,7 @@ const GetStartedButton: React.FC = () => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => window.location.href = '/job'}
     >
       Bắt đầu ngay
     </button>
