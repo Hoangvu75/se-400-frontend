@@ -8,8 +8,8 @@ interface UserState {
 
 // Define the initial state
 const initialState: UserState = {
-  name: null,
-  email: null,
+  name: 'null',
+  email: 'null',
 };
 
 // Create the slice

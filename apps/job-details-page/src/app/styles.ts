@@ -9,7 +9,6 @@ export const pageStyles: CSSProperties = {
 
 export const formsContainer: CSSProperties = {
   display: 'flex',
-  height: '100vh',
   width: '100%',
   marginTop: 20,
   color: black,
@@ -22,6 +21,8 @@ export const jobForm: CSSProperties = {
   borderRadius: '10px',
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
   padding: 20,
+  display: 'flex',
+  flexDirection: 'column',
 };
 
 export const jobTitle: CSSProperties = {
@@ -29,3 +30,16 @@ export const jobTitle: CSSProperties = {
   fontWeight: 600,
   color: black,
 };
+
+export const jobBasicInfo: CSSProperties = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginTop: 20,
+}
+
+export const jobBasicInfoItem: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  fontSize: 13,
+  gap: 6,
+}

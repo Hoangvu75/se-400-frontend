@@ -37,6 +37,7 @@ const JobCard: React.FC<JobCardProps> = ({
       style={jobCardStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => (window.location.href = '/job-details?jobId=123456')}
     >
       <div style={{ display: 'flex' }}>
         <img src={logo} alt="Company Logo" style={logoStyle} />
