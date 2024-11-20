@@ -16,6 +16,13 @@ import Job1 from './assets/job-1.png';
 import Job2 from './assets/job-2.png';
 import Job3 from './assets/job-3.png';
 import Job4 from './assets/job-4.png';
+import Bartender from './assets/bartender.jpg';
+import Barista from './assets/barista.jpg';
+import CarryJob from './assets/carry-job.jpg';
+import Cashier from './assets/cashier.jpg';
+import Chef from './assets/chef.jpg';
+import ItJob from './assets/it-job.jpg';
+
 
 export {
   JobBackground,
@@ -36,4 +43,10 @@ export {
   Job2,
   Job3,
   Job4,
+  Bartender,
+  Barista,
+  CarryJob,
+  Cashier,
+  Chef,
+  ItJob,
 };
