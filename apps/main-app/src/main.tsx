@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { reduxStore } from '@react-monorepo/store';
 import { JobPage } from '../../job-page/src/main';
 import { JobDetailsPage } from '../../job-details-page/src/main';
+import { SearchResultsPage } from '../../search-result-page/src/main';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -24,6 +25,7 @@ root.render(
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/job" element={<JobPage />} />
           <Route path="/job-details" element={<JobDetailsPage />} />
+          <Route path="/search-results" element={<SearchResultsPage />} />
         </Routes>
       </BrowserRouter>
     </StrictMode>
