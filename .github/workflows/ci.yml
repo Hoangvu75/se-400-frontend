@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main
+      - setup-ci
   pull_request:
+    branches:
+      - main
+      - setup-ci
 
 permissions:
   actions: read
