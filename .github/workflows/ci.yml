@@ -22,7 +22,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Setup Node.js and install dependencies
+      # Set Nx Cloud token
+      - name: Set Nx Cloud token
+        run: echo "NX_TOKEN=${{ secrets.NX_TOKEN }}" >> $GITHUB_ENV
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -30,10 +33,7 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      # Install nx-cloud CLI (nếu chưa được cài)
-      - run: yarn global add @nrwl/nx-cloud
-
-      # Start Nx Cloud CI run
+      # Ensure that Nx Cloud CLI uses the correct token
       - run: yarn nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
 
       - uses: nrwl/nx-set-shas@v4
