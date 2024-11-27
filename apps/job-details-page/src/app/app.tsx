@@ -2,8 +2,8 @@
 import * as Styles from './styles';
 import { Footer, NavBar } from '@react-monorepo/components';
 import React from 'react';
-import { JobInfoLeft } from '../components/job-info-left';
-import { JobInfoRight } from '../components/job-info-right';
+import { JobInfo2 } from '../components/job-info2';
+import { JobInfo1 } from '../components/job-info1';
 import { useSelector } from 'react-redux';
 import { RootState } from '@react-monorepo/store';
 
@@ -16,9 +16,9 @@ export function JobDetailsPage() {
       <NavBar />
       <div style={{ display: 'flex', marginBottom: 100 }}>
         <div style={Styles.formsContainer}>
-          <JobInfoRight />
+          <JobInfo1 />
           <div style={{ width: 20 }} />
-          <JobInfoLeft />
+          <JobInfo2 />
         </div>
       </div>
       <Footer />

@@ -9,9 +9,11 @@ import {
   FaRegBookmark,
 } from 'react-icons/fa6';
 import { CommonButton } from '@react-monorepo/components';
-import React from 'react';
+import React, { useState } from 'react';
+import ApplicationModal from './application-modal';
 
-export function JobInfoRight() {
+export function JobInfo1() {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   return (
     <div style={{ flex: 2 }}>
       <div style={Styles.jobForm}>
@@ -57,6 +59,7 @@ export function JobInfoRight() {
               justifyContent: 'center',
               alignItems: 'center',
             }}
+            onClick={() => setIsModalOpen(true)}
           >
             <FaPaperPlane />
             <a>Ứng tuyển ngay</a>
@@ -193,6 +196,7 @@ export function JobInfoRight() {
           - 123 Lê Lợi, Quận 1, TP.HCM
         </a>
       </div>
+      <ApplicationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

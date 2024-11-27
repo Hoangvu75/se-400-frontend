@@ -6,7 +6,7 @@ import { FaClock, FaMedal } from 'react-icons/fa6';
 import { IconType } from 'react-icons';
 import { FaCalendarTimes, FaUserFriends } from 'react-icons/fa';
 
-export function JobInfoLeft() {
+export function JobInfo2() {
   return <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
     <div style={Styles.jobForm}>
       <div style={{
