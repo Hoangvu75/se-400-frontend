@@ -18,10 +18,7 @@
     ]
   },
   "nxCloudId": "6716866dfb524870c5f1612c",
-  "cloud": {
-    "accessToken": "NTQ1N2M1YzQtMTI0ZS00Mjc5LTg1N2ItZWJjY2UzNzU1YzBifHJlYWQtd3JpdGU=",
-    "enabled": true
-  },
+  "nxCloudAccessToken": "NTQ1N2M1YzQtMTI0ZS00Mjc5LTg1N2ItZWJjY2UzNzU1YzBifHJlYWQtd3JpdGU=",
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",
