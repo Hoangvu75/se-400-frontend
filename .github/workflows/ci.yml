@@ -27,31 +27,19 @@ jobs:
 
       # Set Nx Cloud token
       - name: Set Nx Cloud token
-        run: echo "NX_CLOUD_ACCESS_TOKEN=${{ secrets.NX_CLOUD_ACCESS_TOKEN }}" >> $GITHUB_ENV
+        run: echo "NX_TOKEN=${{ secrets.NX_CLOUD_ACCESS_TOKEN }}" >> $GITHUB_ENV
 
-      # Set up Node.js environment
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'yarn'
 
-      # Cache Yarn dependencies
-      - name: Cache Yarn dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      # Install dependencies with Yarn
       - run: yarn install --frozen-lockfile
 
-      # Ensure Nx Cloud CLI uses the correct token
-      - name: Run Nx Cloud CI distribution
-        run: yarn nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
+      # Ensure that Nx Cloud CLI uses the correct token
+      - run: yarn nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
 
-      # Ensure Nx sets the correct SHAs for affected tasks
       - uses: nrwl/nx-set-shas@v4
 
-      # Run affected tasks (lint, test, and build)
+      # Run affected commands
       - run: yarn nx affected -t lint test build
