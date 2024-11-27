@@ -6,6 +6,8 @@ interface InputFieldProps {
   type?: HTMLInputTypeAttribute;
   isRequired?: boolean;
   style?: CSSProperties;
+  value?: string;  
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;  
 }
 
 export const InputField = (props: InputFieldProps) => {
@@ -23,12 +25,14 @@ export const InputField = (props: InputFieldProps) => {
 
   return (
     <input
-      type={props.type}
-      style={{ ...inputField, ...props.style }}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
+      type={props.type}  
+      style={{ ...inputField, ...props.style }}  
+      onFocus={() => setIsFocused(true)}  
+      onBlur={() => setIsFocused(false)}  
       placeholder={props.placeholder}
-      required={props.isRequired}
+      required={props.isRequired}  
+      value={props.value}  
+      onChange={props.onChange} 
     />
   );
 };
