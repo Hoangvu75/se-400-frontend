@@ -14,7 +14,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.gitlab-ci.yml"]
   },
-  "nxCloudId": "6716866dfb524870c5f1612c",
+  "nxCloudId": "67473546bc40af3136843191",
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",
@@ -27,18 +27,8 @@
         "typecheckTargetName": "typecheck"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
   "generators": {
     "@nx/react": {
@@ -48,9 +38,7 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": {
-        "style": "scss"
-      },
+      "component": { "style": "scss" },
       "library": {
         "style": "scss",
         "linter": "eslint",
