@@ -34,7 +34,7 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       # Ensure that Nx Cloud CLI uses the correct token
-      - run: yarn nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
+#      - run: yarn nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
 
       - uses: nrwl/nx-set-shas@v4
 
