@@ -42,4 +42,4 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       # Run affected commands
-      - run: yarn nx affected -t lint test build
+      - run: yarn nx affected -t lint test build --no-cache
