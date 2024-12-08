@@ -14,13 +14,8 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@react-monorepo/asset-lib": ["libs/asset-lib/src/index.ts"],
-      "@react-monorepo/colors": ["libs/colors/src/index.ts"],
-      "@react-monorepo/components": ["libs/components/src/index.ts"],
-      "@react-monorepo/models": ["libs/models/src/index.ts"],
-      "@react-monorepo/store": ["libs/store/src/index.ts"]
-    }
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react"
   },
   "exclude": ["node_modules", "tmp"]
 }
