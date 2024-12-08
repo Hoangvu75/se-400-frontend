@@ -1,9 +1,0 @@
-{
-  "name": "search-result-page",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/search-result-page/src",
-  "projectType": "application",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project search-result-page --web",
-  "targets": {}
-}
