@@ -14,8 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react"
+    "paths": {
+      "@react-monorepo/asset-lib": ["libs/asset-lib/src/index.ts"],
+      "@react-monorepo/models": ["libs/models/src/index.ts"],
+      "@react-monorepo/store": ["libs/store/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
