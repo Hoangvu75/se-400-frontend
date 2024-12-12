@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { MetaData } from '../components/MetaData'
 import { Loader } from '../components/Loader'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,7 +9,7 @@ import { AiOutlineSave } from 'react-icons/ai'
 import { HiStatusOnline } from 'react-icons/hi'
 import { BsPersonWorkspace, BsSend } from 'react-icons/bs'
 import { TbLoader2 } from 'react-icons/tb'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify'
 
 export const JobDetails = () => {
@@ -22,9 +22,10 @@ export const JobDetails = () => {
 
   const navigate = useNavigate()
 
-  
+
 
   useEffect(() => {
+    console.log("id", id)
     dispatch(getSingleJob(id))
   }, [dispatch])
 
@@ -50,7 +51,7 @@ export const JobDetails = () => {
     if(!isLogin){
       toast.info(`Please login to ${str} job`)
       navigate("/login")
-    } 
+    }
   }
 
   return (
@@ -78,11 +79,11 @@ export const JobDetails = () => {
                   <p className='text-xl flex gap-1 items-center  md:text-3xl'><BiBriefcase /> {jobDetails.title}</p>
                   <p className='text-lg flex gap-1 items-center  md:text-2xl'><BiBuildings />{jobDetails.companyName}</p>
                   <p className='text-lg flex gap-2 items-center  md:text-2xl'><BsPersonWorkspace size={20} />{jobDetails.employmentType}</p>
-                  <p className='text-lg flex gap-1.5 items-center  md:text-2xl'><HiStatusOnline size={20} /><span className={` ${jobDetails.status === "active" ? "text-green-700" : "text-red-500"} 
+                  <p className='text-lg flex gap-1.5 items-center  md:text-2xl'><HiStatusOnline size={20} /><span className={` ${jobDetails.status === "active" ? "text-green-700" : "text-red-500"}
                   w-20 text-center rounded-lg font-semibold`} >
                     {jobDetails.status}
                   </span></p>
-                  
+
                 </div>
 
               </div>
@@ -107,18 +108,18 @@ export const JobDetails = () => {
               </div>
 
               <div className='md:px-12 pl-4 flex gap-8 pb-32 pt-6 '>
-                <button 
+                <button
                   onClick={()=>{
 
-                    isLogin ? 
-                    
+                    isLogin ?
+
                     me.appliedJobs && me.appliedJobs.includes(jobDetails._id) ? toast.error("You are already applied !") :
                     navigate(`/Application/${jobDetails._id}`)
 
-                    : 
+                    :
                     notLoginHandler("apply")
-                    
-                    
+
+
                   }}
                 className=' hover:bg-green-600 md:text-lg text-sm  font-bold px-10 py-1.5 bg-green-800 flex items-center gap-1 '> <BsSend /> {me.appliedJobs && me.appliedJobs.includes(jobDetails._id) ? "Applied" : "Apply"}</button>
 
@@ -127,27 +128,27 @@ export const JobDetails = () => {
                   ()=>{
                     if(isLogin) {
 
-                      saveJobHandler() 
+                      saveJobHandler()
                     }else{
                       notLoginHandler("save")
-  
+
                     }
                   }
-                  
+
                   } className='  hover:bg-blue-600 md:text-lg text-sm font-bold px-10 py-1.5 bg-blue-800 flex items-center gap-1 '>
-                  {saveJobLoading ? <span className='animate-spin px-5'><TbLoader2 size={20}/></span> : 
-                  
+                  {saveJobLoading ? <span className='animate-spin px-5'><TbLoader2 size={20}/></span> :
+
                   <>
                       <AiOutlineSave />
                     {
-                  
+
                       me.savedJobs && me.savedJobs.includes(jobDetails._id) ? "UnSave" : "Save"
                     }
                   </>
-                  
+
                   }
                 </button>
-               
+
 
 
               </div>
