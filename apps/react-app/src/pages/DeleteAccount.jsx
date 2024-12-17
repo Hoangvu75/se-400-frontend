@@ -5,7 +5,7 @@ import { AiOutlineUnlock, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icon
 import { TbLoader2 } from 'react-icons/tb'
 import { deleteAccount } from '../actions/UserActions'
 import { Checkbox } from '@mantine/core';
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 
 export const DeleteAccount = () => {
@@ -18,17 +18,17 @@ export const DeleteAccount = () => {
     const [password, setPassword] = useState("")
 
     const [confirm, setConfirm] = useState(false)
-    
+
     const navigate = useNavigate() ;
 
 
     const deleteHandler = (e) => {
         e.preventDefault()
-        
+
         const data = {
             password
         }
-        
+
         dispatch(deleteAccount(data))
         setPassword("")
     }
