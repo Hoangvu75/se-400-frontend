@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MetaData } from '../components/MetaData'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Loader } from '../components/Loader'
 import { getJobData, updateJobData } from '../actions/AdminActions'
@@ -68,8 +68,8 @@ export const EditJobAdmin = () => {
         dispatch(getJobData(id))
     }, [])
 
-   
-    
+
+
     useEffect(()=>{
         setTitle(jobData.title)
         setDescription(jobData.description)
@@ -81,7 +81,7 @@ export const EditJobAdmin = () => {
         setCategory(jobData.category)
         setEmploymentType(jobData.employmentType)
         setLogo(jobData.companyLogo.url)
-       
+
     },[jobData])
 
 
@@ -107,10 +107,10 @@ export const EditJobAdmin = () => {
                 companyLogo:logo,
                 description
             }
-    
+
             dispatch(updateJobData(id,updatedData))
         }
-        
+
 
     }
 
@@ -253,7 +253,7 @@ export const EditJobAdmin = () => {
                                             <div className='bg-white flex justify-center items-center'>
 
 
-                                                <select required onChange={(e) => setCategory(e.target.value)} 
+                                                <select required onChange={(e) => setCategory(e.target.value)}
                                                 value={category} name="" id="large" className="block w-full px-6 py-2 text-base text-gray-900 border border-gray-300  bg-gray-50 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 ">
                                                     <option selected value="">Select Category</option>
                                                     <option value="Technology">Technology</option>
@@ -404,7 +404,7 @@ export const EditJobAdmin = () => {
                                         <div className='bg-white flex justify-center items-center'>
 
 
-                                            <select required onChange={(e) => setCategory(e.target.value)} 
+                                            <select required onChange={(e) => setCategory(e.target.value)}
                                             value={category} name="" id="large" className="block w-full px-6 py-2 text-base text-gray-900 border border-gray-300  bg-gray-50 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 ">
                                                 <option selected value="">Select Category</option>
                                                 <option value="Technology">Technology</option>
@@ -456,7 +456,7 @@ export const EditJobAdmin = () => {
 
                                         <div>
                                             <button onClick={()=>updateJobHandler()} disabled={loading} className='blueCol flex justify-center items-center px-8 w-full py-2 font-semibold' >
-                                                {loading ? <TbLoader2 className='animate-spin' size={24} /> : 
+                                                {loading ? <TbLoader2 className='animate-spin' size={24} /> :
                                                 "Edit Job"}</button>
                                         </div>
 

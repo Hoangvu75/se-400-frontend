@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MetaData } from '../components/MetaData'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Loader } from '../components/Loader'
 import { toast } from 'react-toastify'
